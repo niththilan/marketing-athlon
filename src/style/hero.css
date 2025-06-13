@@ -1,0 +1,78 @@
+/* Hero Section Styles */
+body {
+    background-color: rgb(15, 15, 15);
+}
+
+.hero-container {
+    height: 70vh;
+}
+
+.hero-svg {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+/* Soccer Ball 1 Styles */
+.soccer1ball-line {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+}
+
+.soccer1_line {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+}
+
+/* Soccer Ball 2 Styles */
+.soccer2_fill {
+    fill: #fff;
+    opacity: 0.3;
+}
+
+.soccer2_extra-line {
+    fill: none;
+    stroke: #fff;
+}
+
+.soccer2_line {
+    fill: #fff;
+}
+
+/* Basketball Styles */
+.basket_fill {
+    fill: #fff;
+    opacity: 0.3;
+    isolation: isolate;
+}
+
+.basket_extra-line {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+}
+
+.basket_line {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+}
+
+/* Animation Classes (for future use) */
+.soccer1ball {
+    /* Animation properties can be added here */
+}
+
+.soccer2_fill[data-name="FILL"] {
+    /* Additional styling if needed */
+}
+
+.basket_fill[data-name="FILL"] {
+    /* Additional styling if needed */
+}

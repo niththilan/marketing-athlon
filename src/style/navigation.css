@@ -1,0 +1,97 @@
+/* Navigation Styles */
+.navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 50;
+    border-bottom: 1px solid #334155;
+}
+
+.nav-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #60a5fa, #cbd5e1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Desktop Menu */
+.nav-menu-desktop {
+    display: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #60a5fa;
+}
+
+/* Mobile Menu Button */
+.nav-mobile-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Mobile Menu */
+.nav-mobile-menu {
+    display: block;
+    background: #1e293b;
+    border-top: 1px solid #334155;
+}
+
+.nav-mobile-content {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-mobile-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-mobile-link:hover {
+    color: #60a5fa;
+}
+
+/* Desktop Responsive */
+@media (min-width: 768px) {
+    .nav-menu-desktop {
+        display: flex;
+    }
+
+    .nav-mobile-toggle {
+        display: none;
+    }
+
+    .nav-mobile-menu {
+        display: none;
+    }
+}

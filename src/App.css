@@ -1,0 +1,14 @@
+@import './style/base.css';
+@import 'style/navigation.css';
+@import './style/hero.css';
+@import './style/how-it-works.css';
+@import './style/live-demo.css';
+@import './style/benefits.css';
+@import './style/testimonials.css';
+@import './style/interactive-map.css';
+@import './style/download.css';
+@import './style/faq.css';
+@import './style/contact.css';
+@import './style/footer.css';
+@import './style/price.css';
+

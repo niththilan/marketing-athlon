@@ -1,0 +1,176 @@
+/* Live Demo Section Styles */
+.live-demo {
+    padding: 5rem 0;
+    background: linear-gradient(to bottom right, #0f172a, rgba(30, 58, 138, 0.2));
+}
+
+.live-demo-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.live-demo-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.live-demo-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #60a5fa, #cbd5e1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.live-demo-subtitle {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+/* Phone Demo */
+.live-demo-phone-container {
+    display: flex;
+    justify-content: center;
+}
+
+.live-demo-phone-group {
+    position: relative;
+}
+
+.live-demo-phone {
+    width: 20rem;
+    height: 24rem;
+    background: linear-gradient(to bottom right, #1e293b, #334155);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateZ(0);
+    transition: all 0.3s ease;
+}
+
+.live-demo-phone-group:hover .live-demo-phone {
+    transform: scale(1.05);
+}
+
+.live-demo-phone-content {
+    background: #0f172a;
+    border-radius: 1rem;
+    height: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mock App Header */
+.live-demo-header-mock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.live-demo-app-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+}
+
+.live-demo-profile-icon {
+    width: 2rem;
+    height: 2rem;
+    background: #2563eb;
+    border-radius: 50%;
+}
+
+/* Mock Search */
+.live-demo-search {
+    background: #334155;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.live-demo-search-label {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin-bottom: 0.25rem;
+}
+
+.live-demo-search-value {
+    color: white;
+    font-weight: 500;
+}
+
+/* Mock Time Slots */
+.live-demo-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: auto;
+}
+
+.live-demo-slot {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 2px solid #475569;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.live-demo-slot:hover {
+    border-color: #64748b;
+}
+
+.live-demo-slot.selected {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.live-demo-slot-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.live-demo-price {
+    color: #4ade80;
+    font-weight: 600;
+}
+
+/* Mock Book Button */
+.live-demo-book-btn {
+    background: linear-gradient(to right, #2563eb, #1d4ed8);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.live-demo-book-btn:hover {
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+}
+
+/* Glow Effect */
+.live-demo-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+    border-radius: 1.5rem;
+    filter: blur(1rem);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.live-demo-phone-group:hover .live-demo-glow {
+    filter: blur(2rem);
+}

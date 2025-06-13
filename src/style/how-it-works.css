@@ -1,0 +1,132 @@
+/* How It Works Section Styles */
+.how-it-works {
+    padding: 5rem 0;
+    background: #1e293b;
+}
+
+.how-it-works-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.how-it-works-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    background: linear-gradient(to right, #60a5fa, #cbd5e1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Toggle Buttons */
+.how-it-works-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.how-it-works-toggle-group {
+    background: #334155;
+    border-radius: 9999px;
+    padding: 0.5rem;
+    display: flex;
+}
+
+.how-it-works-toggle-btn {
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.how-it-works-toggle-btn.active {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.how-it-works-toggle-btn:not(.active):hover {
+    color: white;
+}
+
+/* Content */
+.how-it-works-content-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.how-it-works-content-slider {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+
+.how-it-works-section {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.how-it-works-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.how-it-works-card-group {
+    position: relative;
+}
+
+.how-it-works-card {
+    background: #334155;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+}
+
+.how-it-works-card:hover {
+    background: #475569;
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.how-it-works-icon {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(to bottom right, #3b82f6, #2563eb);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.how-it-works-card-group:hover .how-it-works-icon {
+    transform: scale(1.1);
+}
+
+.how-it-works-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.how-it-works-card-desc {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .how-it-works-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
