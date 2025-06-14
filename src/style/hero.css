@@ -204,16 +204,6 @@
 }
 
 /* Loading state */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  z-index: -2;
-}
 
 /* Performance optimizations */
 .animation-container svg * {
