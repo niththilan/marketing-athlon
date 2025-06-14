@@ -1,46 +1,175 @@
-import React from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
 
-const Navigation = ({ mobileMenuOpen, setMobileMenuOpen }) => {
-    return (
-        <nav className="navigation">
-            <div className="nav-container">
-                <div className="nav-content">
-                    <div className="nav-logo">
-                        Athlon
-                    </div>
 
-                    {/* Desktop Menu */}
-                    <div className="nav-menu-desktop">
-                        <a href="#how-it-works" className="nav-link">How It Works</a>
-                        <a href="#benefits" className="nav-link">Benefits</a>
-                        <a href="#testimonials" className="nav-link">Reviews</a>
-                        <a href="#download" className="nav-link">Download</a>
-                    </div>
+const Navigation = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        className="nav-mobile-toggle"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    >
-                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.nav-dropdown')) {
+        setActiveDropdown(null);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('click', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { 
+      name: 'Services', 
+      href: '#services',
+      dropdown: ['Web Design', 'Development', 'UI/UX Design', 'Consulting']
+    },
+    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'About', href: '#about' },
+    { name: 'Contact', href: '#contact' }
+  ];
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleDropdown = (index, event) => {
+    event.preventDefault();
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  return (
+    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
+      <div className="navbar-container">
+        {/* Logo */}
+        <div className="navbar-logo">
+          <a href="#home" className="logo-link">
+            <span className="logo-text">Athlon</span>
+            <div className="logo-glow"></div>
+          </a>
+        </div>
+
+        {/* Desktop Navigation */}
+        <ul className="navbar-menu">
+          {navItems.map((item, index) => (
+            <li key={item.name} className={`nav-item ${item.dropdown ? 'nav-dropdown' : ''}`}>
+              <a 
+                href={item.href} 
+                className="nav-link"
+                onClick={item.dropdown ? (e) => toggleDropdown(index, e) : undefined}
+              >
+                <span className="nav-text">{item.name}</span>
+                {item.dropdown && (
+                  <svg 
+                    className={`dropdown-arrow ${activeDropdown === index ? 'dropdown-arrow-active' : ''}`}
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 12 12" 
+                    fill="none"
+                  >
+                    <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
+                <div className="nav-link-glow"></div>
+              </a>
+              
+              {item.dropdown && (
+                <ul className={`dropdown-menu ${activeDropdown === index ? 'dropdown-active' : ''}`}>
+                  {item.dropdown.map((dropItem, dropIndex) => (
+                    <li key={dropIndex} className="dropdown-item">
+                      <a href="#" className="dropdown-link">
+                        <span>{dropItem}</span>
+                        <div className="dropdown-link-glow"></div>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA Button */}
+        <div className="navbar-cta">
+          <button className="cta-button">
+            <span className="cta-text">Get Started</span>
+            <div className="cta-glow"></div>
+            <div className="cta-ripple"></div>
+          </button>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <button 
+          className={`mobile-toggle ${isMobileMenuOpen ? 'mobile-toggle-active' : ''}`}
+          onClick={toggleMobileMenu}
+          aria-label="Toggle mobile menu"
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu-active' : ''}`}>
+        <div className="mobile-menu-content">
+          {navItems.map((item, index) => (
+            <div key={item.name} className="mobile-nav-item">
+              <a 
+                href={item.href} 
+                className="mobile-nav-link"
+                onClick={item.dropdown ? (e) => toggleDropdown(index, e) : undefined}
+              >
+                <span>{item.name}</span>
+                {item.dropdown && (
+                  <svg 
+                    className={`mobile-dropdown-arrow ${activeDropdown === index ? 'mobile-dropdown-arrow-active' : ''}`}
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 12 12" 
+                    fill="none"
+                  >
+                    <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
+              </a>
+              
+              {item.dropdown && (
+                <div className={`mobile-dropdown ${activeDropdown === index ? 'mobile-dropdown-active' : ''}`}>
+                  {item.dropdown.map((dropItem, dropIndex) => (
+                    <a key={dropIndex} href="#" className="mobile-dropdown-link">
+                      {dropItem}
+                    </a>
+                  ))}
                 </div>
+              )}
             </div>
+          ))}
+          
+          <div className="mobile-cta">
+            <button className="mobile-cta-button">
+              <span>Get Started</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
-            {/* Mobile Menu */}
-            {mobileMenuOpen && (
-                <div className="nav-mobile-menu">
-                    <div className="nav-mobile-content">
-                        <a href="#how-it-works" className="nav-mobile-link">How It Works</a>
-                        <a href="#benefits" className="nav-mobile-link">Benefits</a>
-                        <a href="#testimonials" className="nav-mobile-link">Reviews</a>
-                        <a href="#download" className="nav-mobile-link">Download</a>
-                    </div>
-                </div>
-            )}
-        </nav>
-    );
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`mobile-overlay ${isMobileMenuOpen ? 'mobile-overlay-active' : ''}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      ></div>
+    </nav>
+  );
 };
 
 export default Navigation;
