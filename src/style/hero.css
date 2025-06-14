@@ -3,9 +3,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-
   display: flex;
-  align-items: center;
   justify-content: center;
   overflow: hidden;
   color: white;
@@ -15,10 +13,12 @@
 .hero-content {
   position: absolute;
   top: 50%;
-  left: 10%;
+  right: 10%;  
+  left: auto;  
   transform: translateY(-50%);
   z-index: 10;
   max-width: 500px;
+  text-align: right;  
 }
 
 .hero-title {
@@ -71,7 +71,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateX(20%); /* Added this line to move SVG right */
+  transform: translateX(-20%);  /* Changed from 20% to -20% to move SVG left */
 }
 
 /* SVG Styling */
@@ -123,6 +123,47 @@
   stroke-width: 2px;
 }
 
+/* Scroll Button */
+.scroll-button {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  position: relative;
+}
+
+.mouse::before {
+  content: '';
+  width: 4px;
+  height: 8px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 8px;
+  border-radius: 2px;
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    top: 8px;
+  }
+  100% {
+    opacity: 0;
+    top: 24px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .hero-title {
@@ -137,7 +178,7 @@
 
 @media (max-width: 768px) {
   .hero-content {
-    left: 5%;
+    right: 5%;
     max-width: 400px;
   }
   
@@ -178,7 +219,7 @@
   .hero-content {
     position: relative;
     top: auto;
-    left: auto;
+    right: auto;  /* Changed from left: auto */
     transform: none;
     text-align: center;
     padding: 2rem;
@@ -189,6 +230,10 @@
   
   .animation-container {
     z-index: -1;
+  }
+  
+  .scroll-button {
+    bottom: 20px;
   }
 }
 

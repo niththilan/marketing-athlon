@@ -2,7 +2,6 @@
 
 .contact-section {
   padding: 40px 0;
-  background: #010b1c;
   color: #ffffff;
   min-height: 80vh;
 }
@@ -50,13 +49,14 @@
 }
 
 .info-card {
-  background: #011330;
+  background: rgba(1, 19, 48, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 16px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 12px;
+  backdrop-filter: blur(10px);
 }
 
 .info-card::before {
@@ -144,12 +144,13 @@
 
 /* Contact Form */
 .contact-form-container {
-  background: #011330;
+  background: rgba(1, 19, 48, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 24px;
   border-radius: 12px;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .contact-form-container::before {

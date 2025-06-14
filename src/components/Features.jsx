@@ -2,7 +2,7 @@ import React from 'react';
 import { Calendar, MapPin, Users, Brain, Search, Filter } from 'lucide-react';
 
 
-const LiveDemoSection = () => {
+const Features = () => {
   const features = [
     {
       id: 'real-time',
@@ -96,4 +96,4 @@ const LiveDemoSection = () => {
   );
 };
 
-export default LiveDemoSection;
+export default Features;

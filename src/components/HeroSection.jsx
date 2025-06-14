@@ -125,15 +125,17 @@ const HeroSection = () => {
   return (
     <section className="hero-section" ref={containerRef}>
       <div className="hero-content">
-        <h1 className="hero-title">.</h1>
-        <p className="hero-subtitle">.</p>
-        <button className="hero-cta" onClick={() => window.scrollTo({top: window.innerHeight, behavior: 'smooth'})}>
-          .
-        </button>
+        <h1 className="hero-title">ATHLON</h1>
+        <p className="hero-subtitle">Reserve Your Slot</p>
+        <button className="hero-cta">^</button>
       </div>
       
       <div className="animation-container" id="container">
         <Soccer1SVG />
+      </div>
+      
+      <div className="scroll-button">
+        <div className="mouse"></div>
       </div>
     </section>
   );
