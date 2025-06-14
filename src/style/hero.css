@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +71,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateX(20%); /* Added this line to move SVG right */
 }
 
 /* SVG Styling */
@@ -116,54 +117,6 @@
 }
 
 .soccer1ball-line polygon {
-  fill: none;
-  stroke: #ffffff;
-  stroke-linejoin: round;
-  stroke-width: 2px;
-}
-
-/* Soccer Ball 2 Styles */
-#soccer2 {
-  opacity: 0;
-  display: none;
-}
-
-.soccer2_fill polygon {
-  fill: #ffffff;
-  opacity: 0.3;
-}
-
-.soccer2_line path {
-  fill: none;
-  stroke: #d3d3d3;
-}
-
-.soccer2_extra-line path {
-  fill: none;
-  stroke: #ffffff;
-}
-
-/* Basketball Styles */
-#basket {
-  opacity: 0;
-  display: none;
-}
-
-.basket_fill polygon,
-.basket_fill polyline {
-  fill: #ffffff;
-  opacity: 0.3;
-  isolation: isolate;
-}
-
-.basket_line path {
-  fill: none;
-  stroke: #ffffff;
-  stroke-linejoin: round;
-  stroke-width: 2px;
-}
-
-.basket_extra-line path {
   fill: none;
   stroke: #ffffff;
   stroke-linejoin: round;
