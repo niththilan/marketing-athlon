@@ -10,7 +10,7 @@ import DownloadSection from './components/DownloadSection';
 import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-// import Price from './components/Price.jsx';
+// import Price from "../src/components/Price.jsx";
 import './App.css';
 
 
@@ -94,6 +94,7 @@ const App = () => {
                 heroRef={heroRef}
                 scrollY={scrollY}
             />
+            
 
             <HowItWorksSection
                 activeSection={activeSection}
