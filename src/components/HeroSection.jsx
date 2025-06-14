@@ -284,10 +284,10 @@ const HeroSection = () => {
   return (
     <section className="hero-section" ref={containerRef}>
       <div className="hero-content">
-        <h1 className="hero-title">Sports Animation</h1>
-        <p className="hero-subtitle">Experience dynamic sports graphics in motion</p>
+        <h1 className="hero-title">.</h1>
+        <p className="hero-subtitle">.</p>
         <button className="hero-cta" onClick={() => window.scrollTo({top: window.innerHeight, behavior: 'smooth'})}>
-          Explore More
+          .
         </button>
       </div>
       
