@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import Features from './components/Features.jsx';
 import ContactSection from './components/ContactSection';
+import Price from './components/Price.jsx';
 import Footer from './components/Footer';
 import './App.css';
 import About from './components/About.jsx';
@@ -39,6 +40,7 @@ const App = () => {
                 setActiveSection={setActiveSection}
             />
             <Features />
+            <Price/>
 
             <ContactSection />
 
